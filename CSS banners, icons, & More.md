@@ -42,6 +42,10 @@ Copy the code below and paste it into a `.css` file in `.obsidian/snippets`.
 /* ----- banner image variants ----- */
 /* ---- majority done by efemkay ---- */
 
+body {
+ --banner-height: 250px;
+}
+
 /* ---- the code below is a slightly modified version of efemkay's banner image in this forum post: https://forum.obsidian.md/t/css-how-to-style-the-first-image-in-a-note/52839/ ---- */
 
 /* banner using css only -- https://forum.obsidian.md/t/css-how-to-style-the-first-image-in-a-note/52839/ */
