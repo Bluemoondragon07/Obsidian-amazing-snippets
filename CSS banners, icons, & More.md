@@ -1,6 +1,6 @@
 # CSS Banners, Icons (Experimental), and other Image Options
 
-This snippet will allow you to use banner images in your notes. It has 3 types of banner styles—Fade, Fancy Title, and Notion—that can be toggled with the Style Settings plug-in. You can also turn an image into an icon that floats near the title of your note (**WARNING:** may look wonky in themes with custom readable line widths).
+This snippet will allow you to use banner images in your notes using css classes and image alts. There are 3 banner styles—Fade, Fancy Title, and Notion—that can be toggled with the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings/blob/main/obsidian-default-theme.css) plug-in. You can also turn an image into an icon positioned near the title of your note (**Warning:** experimental). In addition, images can be floated to either side, and its shape can be changed with alts.
 
 
 ## How it Works
@@ -8,12 +8,11 @@ This snippet will allow you to use banner images in your notes. It has 3 types o
 - `obsidian-banner` - type this in the frontmatter after `cssClasses` to enable the banner image.
 - `obsidian-icon` - type this in the frontmatter after `cssClasses` to enable the icon image.
 ### Image Alts 
-***
-**Example of an Image Alt:** `![image-alt|banner](image.png)`
-***
+>**Example of an image alt** ***(banner):***`![image-alt|banner](image.png)`
+
 -  `banner` - makes the image the banner image.
-- `higher` - positions the background image higher.
-- `lower` - positions the background image lower.
+- `higher` - positions the banner image higher.
+- `lower` - positions the banner image lower.
 -  `circle`, `profile`, or `round` - typing any of these will make the image circular in shape, like a profile picture.
 -  `left` - floats the image left.
 - `right` - floats the image right
@@ -33,19 +32,6 @@ Copy the code below and paste it into a `.css` file in `.obsidian/snippets`.
 
 /* ----- banner image variants ----- */
 /* ---- majority done by efemkay ---- */
-
-/* --- CSS CLASSES and IMAGE ALTS: --- 
-(css class) obsidian-banner - type this in the frontmatter after `cssClasses` to enable the banner image.
-(css class, experimental) obsidian-icon - type this in the frontmatter after `cssClasses` to enable the icon image.
-(img alt) banner - makes the image the banner image.
-(img alt) higher - positions the background image higher
-(img alt) lower - positions the background image lower
-(img alt) circle, profile, OR round - typing any of these will make the image circular in shape, like a profile picture
-(img alt) left - floats the image left
-(img alt) right - floats the image right
-(img alt, experimental) icon - turns the image into a title icon.
-
-
 
 /* ---- the code below is a slightly modified version of emkay's banner image in this forum post: https://forum.obsidian.md/t/css-how-to-style-the-first-image-in-a-note/52839/ ---- */
 
@@ -228,37 +214,6 @@ img[alt*="round"] {
 }
 
 
-/*
-
- | --- scrapped attempt  at icons --- |
-
-.obsidian-banner img[alt*="circle"][alt*="icon"], 
-.obsidian-banner img[alt*="profile"][alt*="icon"],
-.obsidian-banner img[alt*="round"][alt*="icon"] {
-    position: absolute;
-    top: 15px;
-    left: 25px;
-    right: unset;
-    width: 9%;
-    object-fit: cover;
-    overflow: hidden;
-    user-select: none;
-}
-.obsidian-banner.is-readable-line-width img[alt*="circle"][alt*="icon"], 
-.obsidian-banner.is-readable-line-width img[alt*="profile"][alt*="icon"],
-.obsidian-banner.is-readable-line-width img[alt*="round"][alt*="icon"] {
-    position: absolute;
-    top: 15px;
-    left: 470px;
-    right: unset;
-    width: 9%;
-    object-fit: cover;
-    overflow: hidden;
-    user-select: none;
-}
-*/
-
-
 /* @settings
 
 name: Image Features
@@ -285,3 +240,6 @@ settings:
 
 */
 ```
+
+# Credits
+Most of the banner css was done by emkay in [this thread](https://forum.obsidian.md/t/css-how-to-style-the-first-image-in-a-note/52839/). 
