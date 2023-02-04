@@ -242,4 +242,4 @@ settings:
 ```
 
 # Credits
-Most of the banner css was done by emkay in [this thread](https://forum.obsidian.md/t/css-how-to-style-the-first-image-in-a-note/52839/). 
+Special thanks to emkay, who did most of the banner code in [an Obsidian thread](https://forum.obsidian.md/t/css-how-to-style-the-first-image-in-a-note/52839/)!
