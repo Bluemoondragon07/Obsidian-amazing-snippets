@@ -33,7 +33,7 @@ Copy the code below and paste it into a `.css` file in `.obsidian/snippets`.
 /* ----- banner image variants ----- */
 /* ---- majority done by efemkay ---- */
 
-/* ---- the code below is a slightly modified version of emkay's banner image in this forum post: https://forum.obsidian.md/t/css-how-to-style-the-first-image-in-a-note/52839/ ---- */
+/* ---- the code below is a slightly modified version of efemkay's banner image in this forum post: https://forum.obsidian.md/t/css-how-to-style-the-first-image-in-a-note/52839/ ---- */
 
 /* banner using css only -- https://forum.obsidian.md/t/css-how-to-style-the-first-image-in-a-note/52839/ */
 
@@ -242,4 +242,4 @@ settings:
 ```
 
 # Credits
-Special thanks to emkay, who did most of the banner code in [an Obsidian thread](https://forum.obsidian.md/t/css-how-to-style-the-first-image-in-a-note/52839/)!
+Special thanks to efemkay, who did most of the banner code in [an Obsidian thread](https://forum.obsidian.md/t/css-how-to-style-the-first-image-in-a-note/52839/)!
