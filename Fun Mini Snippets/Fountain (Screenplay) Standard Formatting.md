@@ -1,6 +1,9 @@
 # Fountain (Screenplay) Standard Formatting
 
 This snippet tweaks the appearance of the Fountain plug-in in both reading and preview mode to look more consistent with the standard format for screenplays.
+
+![](Screenshots/fountain.png)
+
 ## Changes
 
 1. Margins
