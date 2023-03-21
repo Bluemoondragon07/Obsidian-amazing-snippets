@@ -1,8 +1,16 @@
-# Fountain (Screenplay) Standard Formatting
+# Fountain Standard Formatting
+> Screenplay in image below: [fountain.io](https://fountain.io/syntax#section-example)
+> 
+> **Table of Content**
+>1. [Changes](https://github.com/Bluemoondragon07/Obsidian-amazing-snippets/edit/main/Fun%20Mini%20Snippets/Fountain%20(Screenplay)%20Standard%20Formatting.md#changes)
+>2. [Code](https://github.com/Bluemoondragon07/Obsidian-amazing-snippets/edit/main/Fun%20Mini%20Snippets/Fountain%20(Screenplay)%20Standard%20Formatting.md#code)
+
 
 This snippet tweaks the appearance of the Fountain plug-in in both reading and preview mode to look more consistent with the standard format for screenplays.
 
-![](Screenshots/fountain.png)
+![](https://github.com/Bluemoondragon07/Obsidian-amazing-snippets/blob/main/Screenshots/fountain.png)
+
+
 
 ## Changes
 
