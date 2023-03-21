@@ -17,7 +17,7 @@ This snippet tweaks the appearance of the Fountain plug-in in both reading and p
 1. Margins
     1. Mimics the standard that screenplays are to have 1-inch top, bottom, and right margins as well as a left margin of 1.5 inches.
 2. Action lines
-    1. Typically, you don't want to have a giant block of action lines with no spacing in-between. Typically, screenwriters will break up these blocks by inserting an empty line every 3 or 4 lines. With this snippet, determining where you should break up action lines is much easier. Pasting from a software like Celtx or Studio Binder produce identical breaks.
+    1. Typically, you don't want to have a giant block of action lines with no spacing in-between. Screenwriters will usually break up these blocks by inserting an empty line every 3 or 4 lines. With this snippet, determining where you should break up action lines is much easier. In both reading and preview mode, the position and spacing of the action lines matches up with how they would appear in any professional software. Pasting from a software like Celtx or Studio Binder should produce almost identical paragraph breaks and preserve the position of every word.
 2. Scene Headings and Character Names
     1. This snippet shrinks the size of Scene Headings and Character names for more readability, and also to be consistent with what the final exported script will look like. Colors still follow theme heading colors, though.
 4. Font
