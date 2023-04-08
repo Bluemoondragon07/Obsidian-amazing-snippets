@@ -5,7 +5,7 @@
 This is a slightly modified version of hydescarf's `mado-panels` css class in the Mado Miniflow theme. It turns bulleted and numbered lists, as well as tasks, into panels.
 It has been modified allow long, nested lines of text without overflowing.
 
-![](Screenshots/Panels.png)
+![](https://github.com/Bluemoondragon07/Obsidian-amazing-snippets/blob/main/Screenshots/Panels.png?raw=true)
 
 # How to Use
 Just type `mado-panel` or `panel` in `cssClasses` in the frontmatter of a note.
