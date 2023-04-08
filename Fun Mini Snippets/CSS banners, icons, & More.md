@@ -29,10 +29,10 @@ In addition, images can be floated to either side, and their shape can be change
 I am still a beginner in CSS, and the icon feature did not turn out as good as I'd like. For the most part, it works fine. **BUT**, when viewing multiple panes at the same time, it drifts into a weird position, and a theme with a custom readable line length may disrupt its placement on the page.
 You *can* still use the icons feature, but be warned: it can act a bit wonky.
 ## Screenshots
-![](Screenshots/Banners1.png)
-![](Screenshots/Banners2.png)
-![](Screenshots/Banners3.png)
-![](Screenshots/Banners4.png)
+![](https://github.com/Bluemoondragon07/Obsidian-amazing-snippets/blob/main/Screenshots/Banners1.png)
+![](https://github.com/Bluemoondragon07/Obsidian-amazing-snippets/blob/main/Screenshots/Banners2.png)
+![](https://github.com/Bluemoondragon07/Obsidian-amazing-snippets/blob/main/Screenshots/Banners3.png)
+![](https://github.com/Bluemoondragon07/Obsidian-amazing-snippets/blob/main/Screenshots/Banners4.png)
 
 # Code
 Copy the code below and paste it into a `.css` file in `.obsidian/snippets`.
