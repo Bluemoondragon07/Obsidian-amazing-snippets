@@ -639,7 +639,7 @@ settings:
         title: Page-like View
         type: class-toggle
         default: false
-        description: View the screenplay in a page-like view similar to Microsoft Word. ☝️ RECOMMENDATION - Turn this off before exporting your scripts to PDF.
+        description: ⚠️ EXPERIMENTAL. View the screenplay in a page-like view similar to Microsoft Word. ☝️ RECOMMENDATION - Turn this off before exporting your scripts to PDF.
     -
         id: screenplay-font
         title: Font
@@ -651,7 +651,7 @@ settings:
         title: Strip Special Styling
         description: By default, scene headings, character names, and underlines are bolded, and parentheticals are italicized in screenplay notes. This is not standard for a screenplay. With this setting you can remove such formatting.
         type: class-select
-        default: export-only
+        default: strip-export
         options:
             -
                 label: None
@@ -681,6 +681,24 @@ settings:
         type: class-toggle
         description: Show the format of the active line. For example, show "Scene Heading" when you type a Header 1.
         default: false
+    -
+        id: more-info-heading
+        title: 📖 More
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: recommended-fonts-heading
+        title: Fonts
+        type: heading
+        level: 3
+        collapsed: true
+    -
+        id: recommended-fonts-info
+        title: Recommended Fonts
+        description: "[Courier fonts]('https://en.wikipedia.org/wiki/Courier_(typeface)') are optimal for export. For editing, if you care about accurate word placement and number of action lines, use a monospaced font. Otherwise, any font will do. <br> <br>**Good Export Fonts** <br> - Courier <br> - Courier New <br> - Courier Prime (included with snippet) <br> -  [Courier Final Draft](https://fontsgeek.com/fonts/Final-Draft-Heavy-Regular) <br> - [Courier Screenplay](https://fontsgeek.com/screenplay-font) <br> - [Dark Courier](https://www.wfonts.com/font/dark-courier) <br> <br> **My Personal Favourite Editing Fonts** <br> - [iA Writer Duo S](https://fontsource.org/fonts/ia-writer-duo) <br> - [Courier Prime Sans](https://github.com/quoteunquoteapps/CourierPrimeSans/tree/master)"
+        type: info-text
+        markdown: true
   
 */
 
@@ -1039,11 +1057,11 @@ padding-top: 0 !important;
 
 /* ==== negative, positive classes === */
 .view-content:has(.index-cards) .canvas-node-container:has(.negative) {
-    border: 5px solid var(--color-red);
+    border: 5px solid var(--color-red) !important;
     border-color: var(--color-red) !important;
 }
 .view-content:has(.index-cards) .canvas-node-container:has(.positive) {
-    border: 5px solid var(--color-green);
+    border: 5px solid var(--color-green) !important;
     border-color: var(--color-green) !important;
 }
 
