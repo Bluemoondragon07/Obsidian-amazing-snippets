@@ -94,7 +94,7 @@ body {
            z-index: 1;
         }
         .obsidian-banner img[alt*="banner"], .banner-fade .obsidian-banner img[alt*="banner"]{
-           -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+           -webkit-mask-image: -webkit-gradient(linear, 50% 60%, 50% 100%, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
            mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
        }
         .banner-title .obsidian-banner img[alt*="banner"]{
