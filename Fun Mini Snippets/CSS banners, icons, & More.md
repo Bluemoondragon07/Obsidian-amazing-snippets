@@ -88,7 +88,7 @@ body {
             background: radial-gradient(circle, rgba(0, 0, 0, 0.416) 0%, rgba(0, 0, 0, 0.233) 53%, rgba(0,0,0,0) 100%);    
         }
         
-        .obsidian-banner .inline-title, .banner-fade .obsidian-banner .inline-title{
+        .obsidian-banner .mod-header, .banner-fade .obsidian-banner .mod-header {
            position: relative;
            padding-top: calc(var(--banner-height) - 60px);
            z-index: 1;
