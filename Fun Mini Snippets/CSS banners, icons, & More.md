@@ -145,7 +145,7 @@ body {
        float: left;
        clear:left;
        max-width: 40%;
-       margin-right: 15px;
+       margin-right: 40px;
    }
    
    
