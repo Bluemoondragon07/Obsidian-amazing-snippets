@@ -88,13 +88,13 @@ body {
             background: radial-gradient(circle, rgba(0, 0, 0, 0.416) 0%, rgba(0, 0, 0, 0.233) 53%, rgba(0,0,0,0) 100%);    
         }
         
-        .obsidian-banner .inline-title, .banner-fade .obsidian-banner .inline-title{
+        .obsidian-banner .mod-header, .banner-fade .obsidian-banner .mod-header {
            position: relative;
            padding-top: calc(var(--banner-height) - 60px);
            z-index: 1;
         }
         .obsidian-banner img[alt*="banner"], .banner-fade .obsidian-banner img[alt*="banner"]{
-           -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+           -webkit-mask-image: -webkit-gradient(linear, 50% 60%, 50% 100%, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
            mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
        }
         .banner-title .obsidian-banner img[alt*="banner"]{
@@ -145,7 +145,7 @@ body {
        float: left;
        clear:left;
        max-width: 40%;
-       margin-right: 15px;
+       margin-right: 40px;
    }
    
    
