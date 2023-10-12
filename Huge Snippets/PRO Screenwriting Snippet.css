@@ -39,6 +39,7 @@
 /* basic preview elements (that have their own classes already) */
 p.centered {
   text-align: center;
+  padding-left: 2.5in;
 }
 p.synopsis {
   visibility: hidden;
@@ -1195,17 +1196,27 @@ padding-top: 0 !important;
 }
 
 /* ====== Fountain Editor Plugin ======= */
+/* most of these just add compatibility with Fountain code blocks */
 .cm-fountain-scene-heading, .cm-fountain-character {
   text-transform: uppercase;
 }
 .cm-fountain-character, .cm-fountain-character *  {
-padding-left: var(--fountain-character-left);
-  padding-right: var(--fountain-character-right);
   font-weight: bold;
+  padding: 0 0 0 2.2in !important;
+ 
 }
-.cm-fountain-dialogue, .cm-fountain-dialogue * {
-  padding-left: var(--fountain-dialogue-left);
-  padding-right: var(--fountain-dialogue-right);
+.cm-fountain-character-extension {
+    padding-left: 0 !important;
+}
+ .cm-fountain-dialogue.HyperMD-codeblock.HyperMD-codeblock-bg.cm-line {
+    padding-left: 1.4in !important;
+    margin-top: 0 !important;
+    margin-bottom: 0.1in !important;
+
+}
+.cm-fountain-parenthetical * {
+    padding-left: var(--fountain-parenthesis-left);
+    padding-right: var(--fountain-parenthesis-right);
 }
 
 
