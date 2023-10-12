@@ -36,16 +36,63 @@
 /* ------------------------------------------------------- */
 /* ====================================================== */
 
+/* basic preview elements (that have their own classes already) */
+p.centered {
+  text-align: center;
+}
+p.synopsis {
+  visibility: hidden;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+p.synopsis:not(:hover)::before {
+  visibility: visible;
+  content: "💬";
+}
+p.synopsis:hover {
+  visibility: visible;
+  background: var(--background-secondary);
+  color: var(--text-normal);
+  box-shadow: var(--shadow-s);
+  border: var(--background-modifier-border) solid 1px;
+  border-radius: var(--radius-s);
+  margin-left: 198px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  line-height: 1.5;
+  font-size: calc(var(--font-ui-small) + 1px);
+  font-family: var(--font-monospace-override) , var(--font-monospace) !important;
+  transition: 0.25s;
+  animation: pop-down 200ms forwards ease-in-out;
+}
+p.section {
+    font-weight: bold;
+    text-decoration: underline;
+    padding-left: 2.5in;
+    margin: 0 !important;
+}
+.hide-sections p.section, .hide-synopsis p.synopsis  {
+    display: none;
+}
+
+
+[class*=cm-fountain] {
+  color: var(--text-normal) !important;
+}
+
 
 /* fix some scrolling issues, make view more consistent */
 .fountain-source-view >.CodeMirror-wrap > .CodeMirror-scroll {
-    margin: 1em auto !important;
+    margin: 0 !important;
     text-align: left !important;
-    font-size: 11pt !important;
+    font-size: 12pt !important;
     font-family: var(--screenplay-edit-font), var(--font-monospace), Courier !important;
-    padding: 1in 1in 1in 1.5in !important;
-    max-width: unset;
-    min-width: unset;
+    padding: 0.5in 0.5in 0.5in 1in !important;
+    max-width: 63ch;
+    min-width: 63ch;
     width: 100% !important;
     line-height: 1.4 !important;
 }
@@ -60,8 +107,8 @@
 
 
 /* Styles for Screenplain */
-.markdown-preview-view:not(.screenplay) .screenplay  {
-    font-family: var(--screenplay-font) !important;
+.markdown-preview-view:not(.screenplay) .screenplay, [data-type=fountain] {
+   
     --font-text: var(--screenplay-font) !important;
     font-family: var(--screenplay-font) !important;
     text-align: left !important;
@@ -91,6 +138,16 @@ body:not(.is-phone) .markdown-preview-view:not(.screenplay) .screenplay {
     font-family: var(--screenplay-font) !important;
     --font-monospace: var(--screenplay-font) !important;
  }
+
+[data-type=fountain] .view-content .screenplay {
+     padding: 0 !important;
+    max-width: 63ch !important;
+    width: 63ch !important;
+    min-width: 63ch !important;
+    overflow: scroll;
+    margin: 0em auto !important;
+    font-size: 12pt !important;
+}
 
 /* ===== screenplay page class ===== */
 .screenplay-page .block-language-fountain,
@@ -186,7 +243,7 @@ body:not(.is-phone) .md-screenplay .markdown-preview-sizer {
 /* Dialogue */
 
 /* dual dialogue */
-.markdown-preview-view:not(.screenplay) .screenplay > .dual-dialogue h4 {
+.markdown-preview-view:not(.screenplay) .screenplay > .dual-dialogue h4, [data-type=fountain] .dual-dialogue h4 {
     text-align: left;
     text-transform: uppercase;
     color: var(--h2-color) !important;
@@ -199,7 +256,8 @@ body:not(.is-phone) .md-screenplay .markdown-preview-sizer {
 }
 
 
-.markdown-preview-view:not(.screenplay) .screenplay > .dialogue h4 { /* character names */
+.markdown-preview-view:not(.screenplay) .screenplay > .dialogue h4,
+[data-type=fountain] .dialogue h4 { /* character names */
     text-transform: uppercase;
     color: var(--h2-color);
     font-weight: var(--bold-weight)  !important;
@@ -220,7 +278,8 @@ body:not(.is-phone) .md-screenplay .markdown-preview-sizer {
     margin: 0 0 0 0.5in !important;
 }
 
-.markdown-preview-view:not(.screenplay) .screenplay>.dialogue > p { /* dialogue below names */
+.markdown-preview-view:not(.screenplay) .screenplay>.dialogue > p,
+[data-type=fountain] .dialogue > p { /* dialogue below names */
     text-align: left;
     width: calc(100% - 2.3in) !important;
     max-width: calc(100% - 2.3in) !important;
@@ -240,7 +299,8 @@ body:not(.is-phone) .md-screenplay .markdown-preview-sizer {
 }
 
 /* parentheticals */
-.markdown-preview-view:not(.screenplay) .screenplay>.dialogue > .parenthetical {
+.markdown-preview-view:not(.screenplay) .screenplay>.dialogue > .parenthetical,
+[data-type=fountain] .dialogue > .parenthetical{
     margin: 0 0 0 1.91in !important;
     padding: 0px !important;
     text-align: left;
@@ -253,7 +313,8 @@ body:not(.is-phone) .md-screenplay .markdown-preview-sizer {
 }
 
 /* === Scene Headings === */
-.markdown-preview-view:not(.screenplay) .screenplay>h3 {
+.markdown-preview-view:not(.screenplay) .screenplay>h3,
+[data-type=fountain] h3 {
     padding: 0px !important;
     text-transform: uppercase;
     font-weight: var(--bold-weight)  !important;
@@ -261,7 +322,8 @@ body:not(.is-phone) .md-screenplay .markdown-preview-sizer {
     text-align: left !important;
     color: var(--h1-color) !important;
 }
-.markdown-preview-view:not(.screenplay) .screenplay>h2 {
+.markdown-preview-view:not(.screenplay) .screenplay>h2,
+[data-type=fountain] .screenplay > h2 {
 padding: 0px !important;
 text-transform: uppercase;
 color: var(--h3-color) !important;
@@ -371,7 +433,8 @@ body {
 .markdown-source-view.screenplay .cm-active.HyperMD-header-5::before,
 .markdown-source-view.screenplay .cm-active.HyperMD-header-6::before,
 .markdown-source-view.screenplay .cm-active.HyperMD-hr::before,
-.markdown-source-view.screenplay .cm-active::before {
+.markdown-source-view.screenplay .cm-active::before,
+.cm-fountain-scene-heading.cm-active::before {
     font-size: 0.7rem;
     width: auto;
     margin-left: -110px;
@@ -385,7 +448,8 @@ body {
     border-radius: var(--radius-s);
     color: var(--background-primary);
 }
-.h-syntax .markdown-source-view.screenplay .cm-active.HyperMD-header-1::before {
+.h-syntax .markdown-source-view.screenplay .cm-active.HyperMD-header-1::before,
+.h-syntax .cm-fountain-scene-heading.cm-active::before{
     content: 'Scene Heading';
     background-color: var(--color-blue);
 }
@@ -600,6 +664,7 @@ h2 {
 /* transitions */
 .md-screenplay h4 {
     text-align: right;
+    text-transform: uppercase !important;
     font-size: inherit;
     font-weight: var(--bold-weight) ;
 }
@@ -666,13 +731,14 @@ settings:
     -
         id: md-screenplay-heading
         title: Markdown Screenplays
-        description: Screenplays written with the md-screenplay CSS Class.
+        description: Markdown screenplays written with the `md-screenplay` CSS Class OR screenplays written with Chuang Caleb's "Fountain Editor" plugin.
         type: heading
         level: 2
         collapsed: true
     -
         id: syntax
         title: Syntax Highlighting
+        description: Change text colors according to screenplay elements. (Markdown screenplays only; Fountain Editor support coming soon.)
         type: class-toggle
         default: false
     -   
@@ -680,6 +746,24 @@ settings:
         title: Formatting Helper
         type: class-toggle
         description: Show the format of the active line. For example, show "Scene Heading" when you type a Header 1.
+        default: false
+    -
+        id: fountain-plugin-heading
+        title: Fountain Plugin
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: hide-synopsis 
+        title: Hide Synopses
+        description: Hide Synopses (comments preceded by = ) 
+        type: class-toggle
+        default: false
+    -
+        id: hide-sections
+        title: Hide Sections
+        description: Hide Sections (markdown headings inside a fountain file)
+        type: class-toggle
         default: false
     -
         id: more-info-heading
@@ -720,7 +804,7 @@ body {
 
 .markdown-preview-view.md-screenplay,
 .markdown-source-view.md-screenplay {
-    font-family: var(--screenplay-font), 'Courier Final Draft', 'Courier', var(--font-monospace) !important;
+    
     --font-text: var(--screenplay-font), 'Courier Final Draft', 'Courier', var(--font-monospace) !important;
   --font-preview-view: var(--screenplay-font), 'Courier Final Draft', 'Courier', var(--font-monospace) !important;
     --h1-font: var(--screenplay-font) !important;
@@ -776,7 +860,17 @@ body {
 .markdown-source-view.md-screenplay .cm-active.HyperMD-header-5::before,
 .markdown-source-view.md-screenplay .cm-active.HyperMD-header-6::before,
 .markdown-source-view.md-screenplay .cm-active.HyperMD-hr::before,
-.markdown-source-view.md-screenplay .cm-active::before {
+.markdown-source-view.md-screenplay .cm-active::before,
+.cm-active.cm-fountain-scene-heading::before,
+.cm-active.cm-fountain-action::before,
+.cm-active.cm-fountain-character::before,
+.cm-active.cm-fountain-parenthetical::before,
+.cm-active.cm-fountain-dialogue::before,
+.cm-active.cm-fountain-page-break::before,
+.cm-active.cm-fountain-synopsis::before,
+.cm-active.cm-fountain-lyrics::before,
+.cm-active.cm-fountain-section::before
+{
     font-size: 0.7rem;
     width: auto;
     margin-left: -110px;
@@ -791,28 +885,33 @@ body {
     color: var(--background-primary);
 }
 
-.h-syntax .markdown-source-view.md-screenplay .cm-active::before {
+.h-syntax .markdown-source-view.md-screenplay .cm-active::before,
+.h-syntax .cm-active.cm-fountain-action::before {
     content: 'Action Line';
     background-color: var(--color-green);
 }
 
-.h-syntax .markdown-source-view.md-screenplay .cm-active.HyperMD-header-1::before {
+.h-syntax .markdown-source-view.md-screenplay .cm-active.HyperMD-header-1::before,
+.h-syntax .cm-active.cm-fountain-scene-heading::before{
     content: 'Scene Heading';
     background-color: var(--color-blue);
 }
-.h-syntax .markdown-source-view.md-screenplay .cm-active.HyperMD-header-2::before {
+.h-syntax .markdown-source-view.md-screenplay .cm-active.HyperMD-header-2::before,
+.h-syntax .cm-active.cm-fountain-character::before{
     content: 'Character';
     background-color: var(--color-orange);
 }
 
 .h-syntax .markdown-source-view.md-screenplay .HyperMD-header-2 + .cm-active::before,
 .h-syntax .markdown-source-view.md-screenplay .HyperMD-header-3 + .cm-active::before,
-.h-syntax .markdown-source-view.md-screenplay .HyperMD-header-6 + .cm-active::before {
+.h-syntax .markdown-source-view.md-screenplay .HyperMD-header-6 + .cm-active::before,
+.h-syntax .cm-active.cm-fountain-dialogue::before{
    content: 'Dialogue';
    background-color: var(--color-cyan);
 }
 
-.h-syntax .markdown-source-view.md-screenplay .cm-active.HyperMD-header-3::before {
+.h-syntax .markdown-source-view.md-screenplay .cm-active.HyperMD-header-3::before,
+.h-syntax .cm-active.cm-fountain-parenthetical::before{
     content: 'Parenthetical';
     background-color: var(--color-yellow);
 }
@@ -824,11 +923,24 @@ body {
     content: 'Act';
     background-color: var(--color-red);
 }
-.h-syntax .markdown-source-view.md-screenplay  .cm-active.HyperMD-hr::before {
+.h-syntax .markdown-source-view.md-screenplay  .cm-active.HyperMD-hr::before,
+.h-syntax .cm-active.cm-fountain-page-break::before{
     content: 'Page Break';
     background-color: var(--color-pink);
 }
+.h-syntax .cm-active.cm-fountain-synopsis::before {
+  content: 'Synopsis';
+  background-color: var(--color-cyan);
+}
 
+.h-syntax .cm-active.cm-fountain-lyrics::before {
+  content: 'Lyrics';
+  background-color: var(--color-pink);
+}
+.h-syntax .cm-active.cm-fountain-section::before {
+  content: 'Section';
+  background-color: var(--color-purple);
+}
 
 
 /* scene headings */
@@ -837,9 +949,20 @@ body {
     text-align: left;
     text-transform: uppercase; 
     font-weight: var(--bold-weight) ;
+    margin-bottom: 0 !important;
+    line-height: 1 !important;
+    padding-bottom: 0 !important;
 }
 
+/* decrease spacing below scene headings */
+.markdown-preview-view.md-screenplay div:has(h1) + div p {
+    margin-top: 5px !important;
+}
 
+.markdown-preview-view.md-screenplay p {
+    margin-bottom: 7px !important;
+    margin-top: 7px !important;
+}
 
 /* character names */
 .markdown-preview-view.md-screenplay h2, .markdown-source-view.md-screenplay .HyperMD-header-2 {
@@ -893,6 +1016,7 @@ padding-top: 0 !important;
 .markdown-preview-view.md-screenplay h4, .markdown-source-view.md-screenplay .HyperMD-header-4 {
     text-align: right !important;
     width: 100% !important;
+    text-transform: uppercase;
     font-size: inherit;
     font-weight: var(--bold-weight) ;
 }
@@ -1029,7 +1153,7 @@ padding-top: 0 !important;
     font-size: 19.5px !important;
     font-family: var(--screenplay-font) !important;
     margin: auto 0;
-    line-height: 1;
+    line-height: 0.9;
    }
 
    .view-content:has(.color-outline) .canvas-node:not(.canvas-node-group) .canvas-node-content {
@@ -1038,6 +1162,11 @@ padding-top: 0 !important;
 
    .view-content:has(.color-outline) .canvas-node:not(.canvas-node-group) .canvas-node-container {
     border: 8px solid rgba(var(--canvas-color), 1) !important;   
+   }
+
+   /* fix group label color */
+   .theme-light.canvas-group-label {
+    color: rba(var(--canvas-color), 1) !important;
    }
 
 /* ======== tags in canvas ======== */
@@ -1064,6 +1193,23 @@ padding-top: 0 !important;
     border: 5px solid var(--color-green) !important;
     border-color: var(--color-green) !important;
 }
+
+/* ====== Fountain Editor Plugin ======= */
+.cm-fountain-scene-heading, .cm-fountain-character {
+  text-transform: uppercase;
+}
+.cm-fountain-character, .cm-fountain-character *  {
+padding-left: var(--fountain-character-left);
+  padding-right: var(--fountain-character-right);
+  font-weight: bold;
+}
+.cm-fountain-dialogue, .cm-fountain-dialogue * {
+  padding-left: var(--fountain-dialogue-left);
+  padding-right: var(--fountain-dialogue-right);
+}
+
+
+/*
 
 
 /* ================= Strip Formatting ====================== */
